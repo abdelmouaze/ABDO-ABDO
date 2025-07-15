@@ -1,0 +1,20 @@
+h1 {
+    color : red;
+    font-size: 50px;
+    font-family:Arial ;
+    text-align: center;
+}
+#d1{
+    color: rgb(13, 15, 15);
+}
+div{
+    border: solid 1px;
+    width: 500px;
+    height: 500px;
+    background-color: rgb(156, 57, 57);
+    background-image: url("azerti.webp");
+    background-size: cover;
+    margin: 250PX;
+    padding-left: 50px;
+    padding-top: 10px;
+}
