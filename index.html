@@ -1,577 +1,4 @@
 
-<!-- <!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <title>Arena Maroc - بطولات Battle Royale</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #111827;
-      color: #f3f4f6;
-      margin: 0;
-      padding: 0;
-    }
-
-    header, footer {
-      background-color: #1f2937;
-      text-align: center;
-      padding: 15px;
-    }
-
-    .tournaments {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    .tournament {
-      background-color: #1f2937;
-      padding: 20px;
-      border-radius: 8px;
-      margin-bottom: 30px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-
-    h3 {
-      color: #0ea5e9;
-      margin-top: 0;
-    }
-
-    button, input {
-      font-family: inherit;
-    }
-
-    .show-form-btn, .register-form button {
-      background-color: #0ea5e9;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      padding: 8px 12px;
-      margin-top: 10px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    .register-form {
-      display: none;
-      margin-top: 15px;
-    }
-
-    .register-form input {
-      width: 100%;
-      padding: 8px;
-      margin-top: 5px;
-      margin-bottom: 10px;
-      border: none;
-      border-radius: 4px;
-    }
-
-    table {
-      width: 100%;
-      margin-top: 10px;
-      border-collapse: collapse;
-    }
-
-    th, td {
-      border: 1px solid #94a3b8;
-      padding: 8px;
-      text-align: center;
-    }
-
-    h4 {
-      margin-top: 20px;
-      color: #facc15;
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <h1>بطولات gamer</h1>
-  </header>
-
-  <main class="tournaments">
-
-    <div class="tournament" id="fortnite">
-      <h3>بطولة Fortnite</h3>
-      <p>🎮 المنصة: PC</p>
-      <p>📅 التاريخ: 10 - 15 سبتمبر 2025</p>
-      <button class="show-form-btn" onclick="toggleForm(this)">📋 التسجيل</button>
-      <form class="register-form" onsubmit="sendEmail(event, this, 'fortnite')">
-        <input type="text" name="playerId" placeholder="id" required>
-        <input type="text" name="fullName" placeholder="الاسم الكامل" required>
-        <input type="text" name="inGameName" placeholder="الاسم داخل اللعبة" required>
-        <input type="email" name="email" placeholder="البريد الإلكتروني" required>
-        <input type="hidden" name="gameName" value="Fortnite">
-        <button type="submit">إرسال</button>
-      </form>
-      <div class="leaderboard">
-        <h4>الترتيب</h4>
-        <table><thead><tr><th>#</th><th>الاسم داخل اللعبة</th><th>id</th></tr></thead><tbody></tbody></table>
-      </div>
-    </div>
-
-    <div class="tournament" id="pubg">
-      <h3>بطولة PUBG Mobile</h3>
-      <p>🎮 المنصة: Android / iOS</p>
-      <p>📅 التاريخ: 20 - 25 سبتمبر 2025</p>
-      <button class="show-form-btn" onclick="toggleForm(this)">📋 التسجيل</button>
-      <form class="register-form" onsubmit="sendEmail(event, this, 'pubg')">
-        <input type="text" name="playerId" placeholder="id" required>
-        <input type="text" name="fullName" placeholder="الاسم الكامل" required>
-        <input type="text" name="inGameName" placeholder="الاسم داخل اللعبة" required>
-        <input type="email" name="email" placeholder="البريد الإلكتروني" required>
-        <input type="hidden" name="gameName" value="PUBG Mobile">
-        <button type="submit">إرسال</button>
-      </form>
-      <div class="leaderboard">
-        <h4>الترتيب</h4>
-        <table><thead><tr><th>#</th><th>الاسم داخل اللعبة</th><th>id</th></tr></thead><tbody></tbody></table>
-      </div>
-    </div>
-
-    <div class="tournament" id="warzone">
-      <h3>بطولة Call of Duty: Warzone</h3>
-      <p>🎮 المنصة: PC / Console</p>
-      <p>📅 التاريخ: 5 - 10 أكتوبر 2025</p>
-      <button class="show-form-btn" onclick="toggleForm(this)">📋 التسجيل</button>
-      <form class="register-form" onsubmit="sendEmail(event, this, 'warzone')">
-        <input type="text" name="playerId" placeholder="id" required>
-        <input type="text" name="fullName" placeholder="الاسم الكامل" required>
-        <input type="text" name="inGameName" placeholder="الاسم داخل اللعبة" required>
-        <input type="email" name="email" placeholder="البريد الإلكتروني" required>
-        <input type="hidden" name="gameName" value="Call of Duty: Warzone">
-        <button type="submit">إرسال</button>
-      </form>
-      <div class="leaderboard">
-        <h4>الترتيب</h4>
-        <table><thead><tr><th>#</th><th>الاسم داخل اللعبة</th><th>id</th></tr></thead><tbody></tbody></table>
-      </div>
-    </div>
-
-    <div class="tournament" id="apex">
-      <h3>بطولة Apex Legends</h3>
-      <p>🎮 المنصة: PC / Console</p>
-      <p>📅 التاريخ: 15 - 20 أكتوبر 2025</p>
-      <button class="show-form-btn" onclick="toggleForm(this)">📋 التسجيل</button>
-      <form class="register-form" onsubmit="sendEmail(event, this, 'apex')">
-        <input type="text" name="playerId" placeholder="id" required>
-        <input type="text" name="fullName" placeholder="الاسم الكامل" required>
-        <input type="text" name="inGameName" placeholder="الاسم داخل اللعبة" required>
-        <input type="email" name="email" placeholder="البريد الإلكتروني" required>
-        <input type="hidden" name="gameName" value="Apex Legends">
-        <button type="submit">إرسال</button>
-      </form>
-      <div class="leaderboard">
-        <h4>الترتيب</h4>
-        <table><thead><tr><th>#</th><th>الاسم داخل اللعبة</th><th>id</th></tr></thead><tbody></tbody></table>
-      </div>
-    </div>
-
-    <div class="tournament" id="freefire">
-      <h3>بطولة Free Fire</h3>
-      <p>🎮 المنصة: Android / iOS /PC </p>
-      <p>📅 التاريخ: 25 - 30 أكتوبر 2025</p>
-      <button class="show-form-btn" onclick="toggleForm(this)">📋 التسجيل</button>
-      <form class="register-form" onsubmit="sendEmail(event, this, 'freefire')">
-        <input type="text" name="playerId" placeholder="id" required>
-        <input type="text" name="fullName" placeholder="الاسم الكامل" required>
-        <input type="text" name="inGameName" placeholder="الاسم داخل اللعبة" required>
-        <input type="email" name="email" placeholder="البريد الإلكتروني" required>
-        <input type="hidden" name="gameName" value="Free Fire">
-        <button type="submit">إرسال</button>
-      </form>
-      <div class="leaderboard">
-        <h4>الترتيب</h4>
-        <table><thead><tr><th>#</th><th>الاسم داخل اللعبة</th><th>id</th></tr></thead><tbody></tbody></table>
-      </div>
-<div class="tournament" id="fifa25">
-  <h3>بطولة FIFA 25</h3>
-  <p>🎮 المنصة: PS5</p>
-  <p>📅 التاريخ: 5 - 10 نونبر 2025</p>
-  <button class="show-form-btn" onclick="toggleForm(this)">📋 التسجيل</button>
-  <form class="register-form" onsubmit="sendEmail(event, this, 'fifa25')">
-    <input type="text" name="playerId" placeholder="id" required>
-    <input type="text" name="fullName" placeholder="الاسم الكامل" required>
-    <input type="text" name="inGameName" placeholder="الاسم داخل اللعبة" required>
-    <input type="email" name="email" placeholder="البريد الإلكتروني" required>
-    <input type="hidden" name="gameName" value="FIFA 25">
-    <button type="submit">إرسال</button>
-  </form>
-  <div class="leaderboard">
-    <h4>الترتيب</h4>
-    <table><thead><tr><th>#</th><th>الاسم داخل اللعبة</th><th>id</th></tr></thead><tbody></tbody></table>
-  </div>
-</div>
-
-<div class="tournament" id="pes">
-  <h3>بطولة eFootball (PES)</h3>
-  <p>🎮 المنصة: PS4 / PS5/ Android / iOS</p>
-  <p>📅 التاريخ: 12 - 17 نونبر 2025</p>
-  <button class="show-form-btn" onclick="toggleForm(this)">📋 التسجيل</button>
-  <form class="register-form" onsubmit="sendEmail(event, this, 'pes')">
-    <input type="text" name="playerId" placeholder="id" required>
-    <input type="text" name="fullName" placeholder="الاسم الكامل" required>
-    <input type="text" name="inGameName" placeholder="الاسم داخل اللعبة" required>
-    <input type="email" name="email" placeholder="البريد الإلكتروني" required>
-    <input type="hidden" name="gameName" value="eFootball (PES)">
-    <button type="submit">إرسال</button>
-  </form>
-  <div class="leaderboard">
-    <h4>الترتيب</h4>
-    <table><thead><tr><th>#</th><th>الاسم داخل اللعبة</th><th>id</th></tr></thead><tbody></tbody></table>
-  </div>
-</div>
-
-    </div>
-
-  </main>
-
-  <footer>
-    &copy; 2025 Arena Maroc. جميع الحقوق محفوظة.
-  </footer>
-
-  <script>
-    const players = {
-      fortnite: [],
-      pubg: [],
-      warzone: [],
-      apex: [],
-      freefire: []
-    };
-
-    function toggleForm(btn) {
-      const form = btn.nextElementSibling;
-      form.style.display = form.style.display === "block" ? "none" : "block";
-    }
-
-    function sendEmail(event, form, tournamentId) {
-      event.preventDefault();
-
-      const playerId = form.playerId.value.trim();
-      const fullName = form.fullName.value.trim();
-      const inGameName = form.inGameName.value.trim();
-      const email = form.email.value.trim();
-      const gameName = form.gameName.value;
-
-      players[tournamentId].push({ inGameName, fullName });
-      updateLeaderboard(tournamentId);
-
-      const subject = encodeURIComponent(`تسجيل في ${gameName}`);
-      const body = encodeURIComponent(`ID: ${playerId}\nالاسم الكامل: ${fullName}\nاسم اللعبة: ${inGameName}\nالبريد: ${email}`);
-      window.location.href = `mailto:abdelmouaze123@gmail.com?subject=${subject}&body=${body}`;
-
-      form.reset();
-      form.style.display = "none";
-    }
-
-    function updateLeaderboard(id) {
-      const tbody = document.querySelector(`#${id} tbody`);
-      tbody.innerHTML = "";
-      players[id].forEach((p, i) => {
-        const row = `<tr><td>${i + 1}</td><td>${p.inGameName}</td><td>${p.fullName}</td></tr>`;
-        tbody.innerHTML += row;
-      });
-    }
-  </script>
-
-</body>
-</html> -->
-
-<!-- <!DOCTYPE html>
-<html lang="ar" dir="rtl">
-<head>
-  <meta charset="UTF-8">
-  <title>Arena Maroc - بطولات Battle Royale</title>
-  <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #111827;
-      color: #f3f4f6;
-      margin: 0;
-      padding: 0;
-    }
-
-    header, footer {
-      background-color: #1f2937;
-      text-align: center;
-      padding: 15px;
-    }
-
-    .tournaments {
-      max-width: 900px;
-      margin: 40px auto;
-      padding: 0 20px;
-    }
-
-    .tournament {
-      background-color: #1f2937;
-      padding: 20px;
-      border-radius: 8px;
-      margin-bottom: 30px;
-      box-shadow: 0 2px 6px rgba(0,0,0,0.2);
-    }
-
-    h3 {
-      color: #0ea5e9;
-      margin-top: 0;
-    }
-
-    button, input {
-      font-family: inherit;
-    }
-
-    .show-form-btn, .register-form button {
-      background-color: #0ea5e9;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      padding: 8px 12px;
-      margin-top: 10px;
-      cursor: pointer;
-      font-weight: bold;
-    }
-
-    .register-form {
-      display: none;
-      margin-top: 15px;
-    }
-
-    .register-form input {
-      width: 100%;
-      padding: 8px;
-      margin-top: 5px;
-      margin-bottom: 10px;
-      border: none;
-      border-radius: 4px;
-    }
-
-    table {
-      width: 100%;
-      margin-top: 10px;
-      border-collapse: collapse;
-    }
-
-    th, td {
-      border: 1px solid #94a3b8;
-      padding: 8px;
-      text-align: center;
-    }
-
-    h4 {
-      margin-top: 20px;
-      color: #facc15;
-    }
-  </style>
-</head>
-<body>
-
-  <header>
-    <h1>بطولات gamer</h1>
-  </header>
-
-  <main class="tournaments">
-
-     بداية كل بطولة: تكرار نفس الشكل مع إضافة حقل رقم الهاتف -->
-
-    <!-- <div class="tournament" id="fortnite">
-      <h3>بطولة Fortnite</h3>
-      <p>🎮 المنصة: PC</p>
-      <p>📅 التاريخ: 10 - 15 سبتمبر 2025</p>
-      <button class="show-form-btn" onclick="toggleForm(this)">📋 التسجيل</button>
-      <form class="register-form" onsubmit="sendEmail(event, this, 'fortnite')">
-        <input type="text" name="playerId" placeholder="id" required>
-        <input type="text" name="fullName" placeholder="الاسم الكامل" required>
-        <input type="text" name="inGameName" placeholder="الاسم داخل اللعبة" required>
-        <input type="email" name="email" placeholder="البريد الإلكتروني" required>
-        <input type="tel" name="phone" placeholder="رقم الهاتف" required>
-        <input type="hidden" name="gameName" value="Fortnite">
-        <button type="submit">إرسال</button>
-      </form>
-      <div class="leaderboard">
-        <h4>الترتيب</h4>
-        <table><thead><tr><th>#</th><th>الاسم داخل اللعبة</th><th>id</th><th>📞 الهاتف</th></tr></thead><tbody></tbody></table>
-      </div>
-    </div>
-
-    <div class="tournament" id="pubg">
-      <h3>بطولة PUBG Mobile</h3>
-      <p>🎮 المنصة: Android / iOS</p>
-      <p>📅 التاريخ: 20 - 25 سبتمبر 2025</p>
-      <button class="show-form-btn" onclick="toggleForm(this)">📋 التسجيل</button>
-      <form class="register-form" onsubmit="sendEmail(event, this, 'pubg')">
-        <input type="text" name="playerId" placeholder="id" required>
-        <input type="text" name="fullName" placeholder="الاسم الكامل" required>
-        <input type="text" name="inGameName" placeholder="الاسم داخل اللعبة" required>
-        <input type="email" name="email" placeholder="البريد الإلكتروني" required>
-        <input type="tel" name="phone" placeholder="رقم الهاتف" required>
-        <input type="hidden" name="gameName" value="PUBG Mobile">
-        <button type="submit">إرسال</button>
-      </form>
-      <div class="leaderboard">
-        <h4>الترتيب</h4>
-        <table><thead><tr><th>#</th><th>الاسم داخل اللعبة</th><th>id</th><th>📞 الهاتف</th></tr></thead><tbody></tbody></table>
-      </div>
-    </div>
-
-    <div class="tournament" id="warzone">
-      <h3>بطولة Call of Duty: Warzone</h3>
-      <p>🎮 المنصة: PC / Console</p>
-      <p>📅 التاريخ: 5 - 10 أكتوبر 2025</p>
-      <button class="show-form-btn" onclick="toggleForm(this)">📋 التسجيل</button>
-      <form class="register-form" onsubmit="sendEmail(event, this, 'warzone')">
-        <input type="text" name="playerId" placeholder="id" required>
-        <input type="text" name="fullName" placeholder="الاسم الكامل" required>
-        <input type="text" name="inGameName" placeholder="الاسم داخل اللعبة" required>
-        <input type="email" name="email" placeholder="البريد الإلكتروني" required>
-        <input type="tel" name="phone" placeholder="رقم الهاتف" required>
-        <input type="hidden" name="gameName" value="Call of Duty: Warzone">
-        <button type="submit">إرسال</button>
-      </form>
-      <div class="leaderboard">
-        <h4>الترتيب</h4>
-        <table><thead><tr><th>#</th><th>الاسم داخل اللعبة</th><th>id</th><th>📞 الهاتف</th></tr></thead><tbody></tbody></table>
-      </div>
-    </div>
-
-    <div class="tournament" id="apex">
-      <h3>بطولة Apex Legends</h3>
-      <p>🎮 المنصة: PC / Console</p>
-      <p>📅 التاريخ: 15 - 20 أكتوبر 2025</p>
-      <button class="show-form-btn" onclick="toggleForm(this)">📋 التسجيل</button>
-      <form class="register-form" onsubmit="sendEmail(event, this, 'apex')">
-        <input type="text" name="playerId" placeholder="id" required>
-        <input type="text" name="fullName" placeholder="الاسم الكامل" required>
-        <input type="text" name="inGameName" placeholder="الاسم داخل اللعبة" required>
-        <input type="email" name="email" placeholder="البريد الإلكتروني" required>
-        <input type="tel" name="phone" placeholder="رقم الهاتف" required>
-        <input type="hidden" name="gameName" value="Apex Legends">
-        <button type="submit">إرسال</button>
-      </form>
-      <div class="leaderboard">
-        <h4>الترتيب</h4>
-        <table><thead><tr><th>#</th><th>الاسم داخل اللعبة</th><th>id</th><th>📞 الهاتف</th></tr></thead><tbody></tbody></table>
-      </div>
-    </div>
-
-    <div class="tournament" id="freefire">
-      <h3>بطولة Free Fire</h3>
-      <p>🎮 المنصة: Android / iOS / PC</p>
-      <p>📅 التاريخ: 25 - 30 أكتوبر 2025</p>
-      <button class="show-form-btn" onclick="toggleForm(this)">📋 التسجيل</button>
-      <form class="register-form" onsubmit="sendEmail(event, this, 'freefire')">
-        <input type="text" name="playerId" placeholder="id" required>
-        <input type="text" name="fullName" placeholder="الاسم الكامل" required>
-        <input type="text" name="inGameName" placeholder="الاسم داخل اللعبة" required>
-        <input type="email" name="email" placeholder="البريد الإلكتروني" required>
-        <input type="tel" name="phone" placeholder="رقم الهاتف" required>
-        <input type="hidden" name="gameName" value="Free Fire">
-        <button type="submit">إرسال</button>
-      </form>
-      <div class="leaderboard">
-        <h4>الترتيب</h4>
-        <table><thead><tr><th>#</th><th>الاسم داخل اللعبة</th><th>id</th><th>📞 الهاتف</th></tr></thead><tbody></tbody></table>
-      </div>
-    </div>
-
-    <div class="tournament" id="fifa25">
-      <h3>بطولة FIFA 25</h3>
-      <p>🎮 المنصة: PS5</p>
-      <p>📅 التاريخ: 5 - 10 نونبر 2025</p>
-      <button class="show-form-btn" onclick="toggleForm(this)">📋 التسجيل</button>
-      <form class="register-form" onsubmit="sendEmail(event, this, 'fifa25')">
-        <input type="text" name="playerId" placeholder="id" required>
-        <input type="text" name="fullName" placeholder="الاسم الكامل" required>
-        <input type="text" name="inGameName" placeholder="الاسم داخل اللعبة" required>
-        <input type="email" name="email" placeholder="البريد الإلكتروني" required>
-        <input type="tel" name="phone" placeholder="رقم الهاتف" required>
-        <input type="hidden" name="gameName" value="FIFA 25">
-        <button type="submit">إرسال</button>
-      </form>
-      <div class="leaderboard">
-        <h4>الترتيب</h4>
-        <table><thead><tr><th>#</th><th>الاسم داخل اللعبة</th><th>id</th><th>📞 الهاتف</th></tr></thead><tbody></tbody></table>
-      </div>
-    </div>
-
-    <div class="tournament" id="pes">
-      <h3>بطولة eFootball (PES)</h3>
-      <p>🎮 المنصة: PS4 / PS5 / Android / iOS</p>
-      <p>📅 التاريخ: 12 - 17 نونبر 2025</p>
-      <button class="show-form-btn" onclick="toggleForm(this)">📋 التسجيل</button>
-      <form class="register-form" onsubmit="sendEmail(event, this, 'pes')">
-        <input type="text" name="playerId" placeholder="id" required>
-        <input type="text" name="fullName" placeholder="الاسم الكامل" required>
-        <input type="text" name="inGameName" placeholder="الاسم داخل اللعبة" required>
-        <input type="email" name="email" placeholder="البريد الإلكتروني" required>
-        <input type="tel" name="phone" placeholder="رقم الهاتف" required>
-        <input type="hidden" name="gameName" value="eFootball (PES)">
-        <button type="submit">إرسال</button>
-      </form>
-      <div class="leaderboard">
-        <h4>الترتيب</h4>
-        <table><thead><tr><th>#</th><th>الاسم داخل اللعبة</th><th>id</th><th>📞 الهاتف</th></tr></thead><tbody></tbody></table>
-      </div>
-    </div>
-
-  </main>
-
-  <footer>
-    &copy; 2025 Arena Maroc. جميع الحقوق محفوظة.
-  </footer>
-
-  <script>
-    const players = {
-      fortnite: [],
-      pubg: [],
-      warzone: [],
-      apex: [],
-      freefire: [],
-      fifa25: [],
-      pes: []
-    };
-
-    function toggleForm(btn) {
-      const form = btn.nextElementSibling;
-      form.style.display = form.style.display === "block" ? "none" : "block";
-    }
-
-    function sendEmail(event, form, tournamentId) {
-      event.preventDefault();
-
-      const playerId = form.playerId.value.trim();
-      const fullName = form.fullName.value.trim();
-      const inGameName = form.inGameName.value.trim();
-      const email = form.email.value.trim();
-      const phone = form.phone.value.trim();
-      const gameName = form.gameName.value;
-
-      players[tournamentId].push({ inGameName, playerId });
-
-      updateLeaderboard(tournamentId);
-
-      const subject = encodeURIComponent(`تسجيل في ${gameName}`);
-      const body = encodeURIComponent(`ID: ${playerId}\nالاسم الكامل: ${fullName}\nاسم اللعبة: ${inGameName}\nالبريد: ${email}\nرقم الهاتف: ${phone}`);
-      window.location.href = `mailto:abdelmouaze123@gmail.com?subject=${subject}&body=${body}`;
-
-      form.reset();
-      form.style.display = "none";
-    }
-
-    function updateLeaderboard(id) {
-      const tbody = document.querySelector(`#${id} tbody`);
-      tbody.innerHTML = "";
-      players[id].forEach((p, i) => {
-        const row = `<tr><td>${i + 1}</td><td>${p.inGameName}</td><td>${p.playerId}</td></tr>`;
-        tbody.innerHTML += row;
-      });
-    }
-  </script>
-
-</body>
-</html> -->
-
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
